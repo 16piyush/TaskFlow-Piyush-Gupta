@@ -1,0 +1,31 @@
+{
+  "users": [
+    {
+      "id": "1787660674384",
+      "name": "Piyush",
+      "email": "piyu12sh@gmail.com",
+      "password": "$2a$10$/mAD.Wsz86YWXrKGxYdiDOPvGuRwG.sPJ/b/JLTMxypryyRmvGjlm",
+      "createdAt": "2026-08-25T12:24:34.385Z"
+    },
+    {
+      "id": "1787661449922",
+      "name": "Demo1",
+      "email": "Demo@gmail.com",
+      "password": "$2a$10$raJLOa8.MC53eeUcz.l28uwQi4WIx0.wyxVynnl8YMs1Xg44JUBdS",
+      "createdAt": "2026-08-25T12:37:29.927Z"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "1787660725000",
+      "userId": "1787660674384",
+      "title": "Create website",
+      "description": "",
+      "priority": "medium",
+      "status": "in-progress",
+      "dueDate": null,
+      "createdAt": "2026-08-25T12:25:25.000Z",
+      "updatedAt": "2026-08-25T12:25:37.554Z"
+    }
+  ]
+}

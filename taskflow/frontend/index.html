@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TaskFlow — Task Management</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Auth screens -->
+  <div id="auth-screen" class="auth-wrap">
+    <div class="auth-card">
+      <div class="brand">
+        <span class="brand-mark">TF</span>
+        <span class="brand-name">TaskFlow</span>
+      </div>
+
+      <div id="login-form">
+        <h1>Welcome back</h1>
+        <p class="sub">Sign in to manage your tasks.</p>
+        <input type="email" id="login-email" placeholder="Email" autocomplete="email" />
+        <input type="password" id="login-password" placeholder="Password" autocomplete="current-password" />
+        <button class="btn-primary" id="login-btn">Sign in</button>
+        <p class="switch">New here? <a id="show-register">Create an account</a></p>
+        <p class="err" id="login-err"></p>
+      </div>
+
+      <div id="register-form" class="hidden">
+        <h1>Create account</h1>
+        <p class="sub">Start organizing your work in minutes.</p>
+        <input type="text" id="reg-name" placeholder="Full name" />
+        <input type="email" id="reg-email" placeholder="Email" autocomplete="email" />
+        <input type="password" id="reg-password" placeholder="Password" autocomplete="new-password" />
+        <button class="btn-primary" id="register-btn">Create account</button>
+        <p class="switch">Already have an account? <a id="show-login">Sign in</a></p>
+        <p class="err" id="register-err"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- App shell -->
+  <div id="app-screen" class="app-wrap hidden">
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-mark">TF</span>
+        <span class="brand-name">TaskFlow</span>
+      </div>
+      <div class="user-chip">
+        <span id="user-name"></span>
+        <button id="logout-btn" title="Log out">⏻</button>
+      </div>
+      <nav class="filters">
+        <button class="filter-btn active" data-status="">All tasks</button>
+        <button class="filter-btn" data-status="pending">Pending</button>
+        <button class="filter-btn" data-status="in-progress">In progress</button>
+        <button class="filter-btn" data-status="completed">Completed</button>
+      </nav>
+      <div class="stats" id="stats"></div>
+    </aside>
+
+    <main class="main">
+      <header class="main-header">
+        <h1 id="view-title">All tasks</h1>
+        <button class="btn-primary" id="new-task-btn">+ New task</button>
+      </header>
+
+      <div id="task-list" class="task-list"></div>
+      <p id="empty-state" class="empty hidden">No tasks here yet. Add one to get started.</p>
+    </main>
+  </div>
+
+  <!-- Task modal -->
+  <div id="task-modal" class="modal-overlay hidden">
+    <div class="modal">
+      <h2 id="modal-title">New task</h2>
+      <input type="hidden" id="task-id" />
+      <label>Title</label>
+      <input type="text" id="task-title" placeholder="e.g. Design landing page" />
+      <label>Description</label>
+      <textarea id="task-desc" placeholder="Add details..."></textarea>
+      <div class="row">
+        <div>
+          <label>Priority</label>
+          <select id="task-priority">
+            <option value="low">Low</option>
+            <option value="medium" selected>Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
+        <div>
+          <label>Status</label>
+          <select id="task-status">
+            <option value="pending">Pending</option>
+            <option value="in-progress">In progress</option>
+            <option value="completed">Completed</option>
+          </select>
+        </div>
+        <div>
+          <label>Due date</label>
+          <input type="date" id="task-due" />
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn-ghost hidden" id="delete-task-btn">Delete</button>
+        <button class="btn-ghost" id="cancel-modal-btn">Cancel</button>
+        <button class="btn-primary" id="save-task-btn">Save task</button>
+      </div>
+    </div>
+  </div>
+
+<script src="app.js"></script>
+</body>
+</html>
